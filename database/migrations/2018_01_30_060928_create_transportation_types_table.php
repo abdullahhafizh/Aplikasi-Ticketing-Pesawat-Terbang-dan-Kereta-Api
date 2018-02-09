@@ -20,6 +20,16 @@ class CreateTransportationTypesTable extends Migration
         });
         $statement = "ALTER TABLE transportation_types AUTO_INCREMENT = 300001;";
         DB::unprepared($statement);
+        DB::table('transportation_types')->insert(
+            array(                
+                'description' => 'Bussines',                
+            )
+        );
+        DB::table('transportation_types')->insert(
+            array(                
+                'description' => 'Economy',
+            )
+        );
     }
 
     /**

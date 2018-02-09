@@ -23,6 +23,30 @@ class CreateCustomersTable extends Migration
         });
         $statement = "ALTER TABLE customers AUTO_INCREMENT = 200001;";
         DB::unprepared($statement);
+        DB::table('customers')->insert(
+            array(                
+                'name' => 'Customer 1',
+                'address' => 'DKI Jakarta',
+                'phone' => '1234567890',
+                'gender' => 'Male',
+            )
+        );
+        DB::table('customers')->insert(
+            array(                
+                'name' => 'Customer 2',
+                'address' => 'DKI Jakarta',
+                'phone' => '2345678901',
+                'gender' => 'Female',
+            )
+        );
+        DB::table('customers')->insert(
+            array(                
+                'name' => 'Customer 3',
+                'address' => 'DKI Jakarta',
+                'phone' => '3456789012',
+                'gender' => 'Other',
+            )
+        );
     }
 
     /**

@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
                 'username' => 'adminadmin',
                 'password' => bcrypt('adminadmin'),
                 'fullname' => 'Admin',
-                'level' => '2',
+                'level' => '2',                
             )
         );
         DB::table('users')->insert(

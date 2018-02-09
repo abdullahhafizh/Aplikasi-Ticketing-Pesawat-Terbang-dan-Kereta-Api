@@ -25,6 +25,24 @@ class CreateRoutesTable extends Migration
         });
         $statement = "ALTER TABLE routes AUTO_INCREMENT = 500001;";
         DB::unprepared($statement);
+        DB::table('routes')->insert(
+            array(
+                'depart_at' => 'Departure 1',
+                'route_from' => 'A',
+                'route_to' => 'Z',
+                'price' => '200000',
+                'transportationid' => '400001',
+            )
+        );
+        DB::table('routes')->insert(
+            array(
+                'depart_at' => 'Departure 2',
+                'route_from' => 'Z',
+                'route_to' => 'A',
+                'price' => '100000',
+                'transportationid' => '400002',
+            )
+        );
     }
 
     /**

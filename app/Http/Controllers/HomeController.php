@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use Auth;
+use \App\Customer;
+use \App\Route;
+
+
 
 class HomeController extends Controller
 {
@@ -15,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -25,6 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['customers'] = Customer::get();
+        $data['routes'] = Route::get();
+        return view('home')->with($data);
     }    
 }

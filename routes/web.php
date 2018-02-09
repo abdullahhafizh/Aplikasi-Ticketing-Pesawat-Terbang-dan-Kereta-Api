@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UserController@index');
+Route::post('reservasi/create', 'GuestController@store');
 
 Route::group(['prefix' => 'customer'] , function(){
 	Route::get('/', 'CustomerController@index');	
